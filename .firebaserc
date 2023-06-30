@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "groupfundr": {
+      "hosting": {
+        "GroupFundr": [
+          "groupfundr"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "groupfundr"
+  }
+}

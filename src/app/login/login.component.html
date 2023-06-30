@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">Please Login</div>
+    <form>
+      <div class="form-field">
+        <label>Email</label>
+        <input
+          type="email"
+          name="email"
+          placeholder="enter your email"
+          [(ngModel)]="email"
+        />
+      </div>
+      <div class="form-field">
+        <label>Password</label>
+        <input
+          type="password"
+          name="password"
+          placeholder="enter your password"
+          [(ngModel)]="password"
+        />
+      </div>
+      <button class="button" type="button" (click)="login()">Login</button>
+      <p class="">
+        Don't have an account? <a routerLink="/register"> Please Register</a>
+      </p>
+
+      <button class="button" (click)="signInWithGoogle()" type="button">
+        <span>G</span> SignIn With Google
+      </button>
+    </form>
+  </div>
+</div>
