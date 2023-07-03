@@ -1,0 +1,31 @@
+.sidebar {
+  width: 200px;
+  background-color: #485ac2;
+}
+
+.sidebar button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-align: left;
+  padding: 8px 16px;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+
+  color: white;
+}
+
+.sidebar button:hover {
+  background-color: rgba(72, 90, 194, 0.1);
+}
+
+.sidebar .active {
+  background-color: rgba(42, 50, 94, 0.2);
+}
+
+.content {
+  text-align: center;
+  min-height: 600px;
+}

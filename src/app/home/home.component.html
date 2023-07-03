@@ -1,13 +1,29 @@
-<mat-sidenav-container>
-  <mat-sidenav #sidenav opened="true" mode="side" style="width: 200px">
-    <mat-nav-list>
-      <a rou mat-list-item>Add User</a>
-      <a mat-list-item>Add Group</a>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <div style="height: 88vh">
+
+
+
+<mat-drawer-container>
+  <mat-drawer #drawer opened="true" mode="side" position="start" class="sidebar">
+    <mat-list class="list-contents">
+      <mat-list-item>
+        <button mat-button routerLinkActive="active" routerLink="addUser">
+          <mat-icon>person_add</mat-icon>
+
+          Add User
+        </button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button routerLink="addGroup" routerLinkActive="active">
+          <mat-icon>group_add</mat-icon>
+
+          Add Group
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <div class="content">
       <router-outlet></router-outlet>
     </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+  </mat-drawer-content>
+</mat-drawer-container>

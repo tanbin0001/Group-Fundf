@@ -3,7 +3,7 @@
     <div class="card-header">Please Login</div>
     <form>
       <div class="form-field">
-        <label>Email</label>
+        <label>Email*</label>
         <input
           type="email"
           name="email"
@@ -12,7 +12,7 @@
         />
       </div>
       <div class="form-field">
-        <label>Password</label>
+        <label>Password*</label>
         <input
           type="password"
           name="password"
@@ -20,7 +20,11 @@
           [(ngModel)]="password"
         />
       </div>
-      <button class="button" type="button" (click)="login()">Login</button>
+
+      <button class="button box fadeIn" type="button" (click)="login()">
+        Login
+      </button>
+
       <p class="">
         Don't have an account? <a routerLink="/register"> Please Register</a>
       </p>

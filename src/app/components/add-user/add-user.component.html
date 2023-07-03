@@ -1,21 +1,24 @@
+<app-section-title [title]="'Add User'"></app-section-title>
+
 <div class="container">
   <div class="card">
-    <div class="card-header">Register</div>
+    <div class="card-header">Please Add an User</div>
     <form>
       <div class="form-field">
         <label>Name</label>
         <input
-        type="text"
-        placeholder="Name"
-        name="name"
-        [(ngModel)]="name" />
+          type="email"
+          name="name"
+          placeholder="enter your name"
+          [(ngModel)]="name"
+        />
       </div>
       <div class="form-field">
         <label>Email</label>
         <input
           type="email"
-          placeholder="Email"
           name="email"
+          placeholder="enter your email"
           [(ngModel)]="email"
         />
       </div>
@@ -23,15 +26,15 @@
         <label>Password</label>
         <input
           type="password"
-          placeholder="Password"
           name="password"
+          placeholder="enter your password"
           [(ngModel)]="password"
         />
       </div>
-      <p>Already have an account? <a routerLink="/login"> Please Login</a></p>
 
-      <button class="button" type="submit" (click)="register()">
-        Register
+      <button class="button box fadeIn" type="button">
+        <mat-icon style="margin-right: 4px">person_add</mat-icon>
+        <span> Add User</span>
       </button>
     </form>
   </div>

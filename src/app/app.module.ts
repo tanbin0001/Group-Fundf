@@ -27,6 +27,9 @@ import { AuthService } from './shared/auth.service';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
+import { AddUserComponent } from './components/add-user/add-user.component';
+import { AddGroupComponent } from './components/add-group/add-group.component';
+import { SectionTitleComponent } from './components/section-title/section-title.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +39,9 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     SharedComponent,
     RegisterComponent,
+    AddUserComponent,
+    AddGroupComponent,
+    SectionTitleComponent,
   ],
   imports: [
     BrowserModule,
