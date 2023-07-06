@@ -3,6 +3,7 @@ import { GoogleAuthProvider } from '@angular/fire/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { addDoc, collection, Firestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root',
@@ -29,7 +30,7 @@ export class AuthService {
         this.router.navigate(['home']);
       },
       (err) => {
-        alert(err.message);
+       
         this.router.navigate(['/login']);
       }
     );
@@ -39,28 +40,21 @@ export class AuthService {
   register(email: string, password: string) {
     this.fireAuth.createUserWithEmailAndPassword(email, password).then(
       () => {
-        alert('Registration Successful');
+        Swal.fire(
+          'Success!',
+          'Registration completed successfully.',
+          'success'
+        );
+
         this.router.navigate(['/login']);
       },
       (err) => {
-        alert(err.message);
+
+
         this.router.navigate(['/register']);
       }
     );
   }
-
-  // googleSignIn() {
-  //   return this.fireAuth.signInWithPopup(new GoogleAuthProvider()).then(
-  //     (res) => {
-  //       this.router.navigate(['/home']);
-  //       localStorage.setItem('token', JSON.stringify(res.user?.uid));
-  //       this.isLoggedIn = true;
-  //     },
-  //     (err) => {
-  //       alert(err.message);
-  //     }
-  //   );
-  // }
 
   googleSignIn() {
     return this.fireAuth.signInWithPopup(new GoogleAuthProvider()).then(
@@ -89,7 +83,7 @@ export class AuthService {
         this.isLoggedIn = true;
       },
       (err) => {
-        alert(err.message);
+
       }
     );
   }
@@ -103,8 +97,9 @@ export class AuthService {
         this.router.navigate(['/login']);
       },
       (err) => {
-        alert(err.message);
+
       }
     );
   }
 }
+

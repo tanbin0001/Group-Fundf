@@ -22,6 +22,7 @@ body {
   color: #fff;
   padding: 10px;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .form-field {
@@ -36,14 +37,9 @@ body {
   width: 100%;
   padding: 10px;
 
-  border: 1px solid #ccc;
-
   border-radius: 4px;
   box-sizing: border-box;
 }
-
-
-
 
 .button span {
   font-weight: bold;
@@ -64,8 +60,6 @@ body {
   cursor: pointer;
   width: 100%;
   text-align: center;
-
-
 }
 
 .button::before {
@@ -101,4 +95,15 @@ p {
 
 p a {
   text-decoration: underline;
+}
+.error-message {
+  color: red;
+  margin-top: 5px;
+  font-size: 12px;
+}
+input.error {
+  border: 1px solid red;
+}
+input.error::placeholder {
+  color: red;
 }

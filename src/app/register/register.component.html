@@ -1,38 +1,161 @@
-<div class="container">
+<!-- <div class="container">
   <div class="card">
     <div class="card-header">Register</div>
-    <form>
+    <form [formGroup]="registerForm" (ngSubmit)="register()">
       <div class="form-field">
-        <label>Name</label>
         <input
-        type="text"
-        placeholder="Name"
-        name="name"
-        [(ngModel)]="name" />
+          type="text"
+          placeholder="Name*"
+          id="name"
+          formControlName="name"
+          required
+          [ngClass]="{
+            error:
+              registerForm.get('name')?.invalid &&
+              registerForm.get('name')?.touched
+          }"
+        />
+        <div
+          *ngIf="
+            registerForm.controls['name'].errors &&
+            registerForm.controls['name'].touched
+          "
+          class="error-message"
+        >
+          {{ getErrorMessage("name") }}
+        </div>
       </div>
       <div class="form-field">
-        <label>Email</label>
         <input
           type="email"
-          placeholder="Email"
-          name="email"
-          [(ngModel)]="email"
+          placeholder="Email*"
+          id="email"
+          formControlName="email"
+          required
+          [ngClass]="{
+            error:
+              registerForm.get('email')?.invalid &&
+              registerForm.get('email')?.touched
+          }"
         />
+        <div
+          *ngIf="
+            registerForm.controls['email'].errors &&
+            registerForm.controls['email'].touched
+          "
+          class="error-message"
+        >
+          {{ getErrorMessage("email") }}
+        </div>
       </div>
       <div class="form-field">
-        <label>Password</label>
         <input
           type="password"
-          placeholder="Password"
-          name="password"
-          [(ngModel)]="password"
+          placeholder="Password*"
+          formControlName="password"
+          required
+          id="password"
+          [ngClass]="{
+            error:
+              registerForm.get('password')?.invalid &&
+              registerForm.get('password')?.touched
+          }"
         />
+        <div
+          *ngIf="
+            registerForm.controls['password'].errors &&
+            registerForm.controls['password'].touched
+          "
+          class="error-message"
+        >
+          {{ getErrorMessage("password") }}
+        </div>
       </div>
       <p>Already have an account? <a routerLink="/login"> Please Login</a></p>
 
-      <button class="button" type="submit" (click)="register()">
+      <button class="button" type="submit" [disabled]="registerForm.invalid">
         Register
       </button>
+    </form>
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="card">
+    <div class="card-header">Register</div>
+    <form
+      [formGroup]="registerForm"
+      (ngSubmit)="(register); formSubmitted = true"
+    >
+      <div class="form-field">
+        <input
+          type="name"
+          id="name"
+          formControlName="name"
+          placeholder="Name*"
+          [ngClass]="{
+            error:
+              registerForm.get('name')?.invalid &&
+              (registerForm.get('name')?.touched || formSubmitted)
+          }"
+        />
+        <div
+          *ngIf="
+            registerForm.get('name')?.invalid &&
+            (registerForm.get('name')?.touched || formSubmitted)
+          "
+          class="error-message"
+        >
+          {{ getErrorMessage("name") }}
+        </div>
+      </div>
+      <div class="form-field">
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          placeholder="Email*"
+          [ngClass]="{
+            error:
+              registerForm.get('email')?.invalid &&
+              (registerForm.get('email')?.touched || formSubmitted)
+          }"
+        />
+        <div
+          *ngIf="
+            registerForm.get('email')?.invalid &&
+            (registerForm.get('email')?.touched || formSubmitted)
+          "
+          class="error-message"
+        >
+          {{ getErrorMessage("email") }}
+        </div>
+      </div>
+      <div class="form-field">
+        <input
+          type="password"
+          id="password"
+          formControlName="password"
+          placeholder="Password*"
+          [ngClass]="{
+            error:
+              registerForm.get('password')?.invalid &&
+              (registerForm.get('password')?.touched || formSubmitted)
+          }"
+        />
+        <div
+          *ngIf="
+            registerForm.get('password')?.invalid &&
+            (registerForm.get('password')?.touched || formSubmitted)
+          "
+          class="error-message"
+        >
+          {{ getErrorMessage("password") }}
+        </div>
+      </div>
+
+      <button class="button box fadeIn" type="submit">Register</button>
+      <p>Already have an account? <a routerLink="/login"> Please Login</a></p>
     </form>
   </div>
 </div>

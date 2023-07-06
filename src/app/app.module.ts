@@ -22,7 +22,8 @@ import { environment } from '../environments/environment';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { SharedComponent } from './shared/shared.component';
-import { AuthService } from './shared/auth.service';
+
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { RegisterComponent } from './register/register.component';
@@ -57,6 +58,8 @@ import { SectionTitleComponent } from './components/section-title/section-title.
     MatInputModule,
     MatCardModule,
     FormsModule,
+    ReactiveFormsModule,
+
 
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
@@ -66,5 +69,5 @@ import { SectionTitleComponent } from './components/section-title/section-title.
   bootstrap: [AppComponent],
 })
 export class AppModule {
-  
+
 }

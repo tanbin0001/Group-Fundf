@@ -22,6 +22,7 @@ body {
   color: #fff;
   padding: 10px;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .form-field {
@@ -35,7 +36,6 @@ body {
 .form-field input {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
 }
@@ -49,7 +49,7 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center; /* Add this line */
+  justify-content: center;  
 
   padding: 12px 24px;
   background-color: #485ac2;
@@ -84,4 +84,16 @@ p {
 
 p a {
   text-decoration: underline;
+}
+
+.error-message {
+  color: red;
+  margin-top: 5px;
+  font-size: 12px;
+}
+input.error {
+  border: 1px solid red;
+}
+input.error::placeholder {
+  color: red;
 }
